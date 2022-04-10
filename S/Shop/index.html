@@ -1,0 +1,362 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<script async src=\"https://www.googletagmanager.com/gtag/js?id=UA-173395669-1\"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-173395669-1');
+	</script>
+	<meta charset="utf-8">
+	<link href="style.css" rel="stylesheet" type="text/css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Protea">
+	<meta name="keywords" content="kingproteas">
+	<meta name=”robots” content=”index, follow”>
+	<meta name="author" content="Alec Shelembe">
+	<link async href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Yanone+Kaffeesatz:wght@600&display=swap" rel="stylesheet">
+	<link rel="shortcut icon" href="kingproteas.png" type="image/x-icon">
+	<link async rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+	/> 
+	<!-- KPV1 Do not remove comment-->
+	<title>Shop</title>
+</head>
+
+	<style type="text/css">
+
+	html{
+		scroll-behavior: smooth;
+
+	}
+
+	* {
+		padding: 0px;
+		margin: 0px;
+		text-decoration:none;
+		list-style: none;
+		box-sizing: border-box;
+		font-family: 'Merriweather', serif;
+
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		
+	}
+
+	body{
+
+		margin: 10px;
+	}
+
+	input{
+		padding: 5px;
+		margin: 5px;
+	}
+
+	table{
+		width:100%;
+		border-radius:5px;
+	}
+
+	table tr td{
+		padding:2px;
+		text-align:left;
+		font-size:15px;
+	}
+	
+	td:hover{
+		font-weight:bold;
+	}
+
+	table tr{
+		border-radius:10px;
+	}
+
+	table img{
+		width:100%;
+		opacity:0.8;
+		border-radius:5px;
+		box-shadow: 1px 1px 4px 1px;
+	}
+
+	table img:hover{
+		height:auto;
+		box-shadow: 2px 2px 8px 2px;
+	}
+
+	div span{
+		color:green;
+	}
+
+	.product_price, .product_name{
+		color:grey;
+	}
+	
+	.w-block{
+		margin:5px;
+		padding: 10px 0px;
+		border:none;
+		border-radius:5px;
+		color:grey;
+		position:relative;
+	}
+
+	.total{
+		position: fixed;
+		width: 100px;
+		height: 27px;
+		bottom:20px;
+		right:80px;
+		text-align:center;
+		background-color:#f5f5f5;
+		border-radius:5px;
+		font-size:20px;
+		font-weight:bold;
+		color:green;
+	}
+
+	.order{
+		position: fixed;
+		bottom:10px;
+		right:10px;
+		text-align:center;
+		background-color:#f5f5f5;
+		border-radius:5px;
+		font-size:20px;
+		font-weight:bold;
+		color:green;
+	}
+
+	.circle_button{
+		border-radius:30%;
+		border:none;
+		background-color:white;
+		margin-right:10px;
+	}
+
+	.grey{
+		color:grey;
+	}
+
+	td div{
+		display:inline-block;
+		padding-right:20px;
+	}
+
+	.z{
+		 /*in use*/
+	}
+
+	.y{
+		/*in use*/
+	}
+
+	.x{
+		/*in use*/
+	}
+
+
+	</style><body class="animate__animated animate__fadeIn">
+	<header>
+		<nav>
+			<div class="w-block">				
+				<h1>Tuckshop</h1>13:00 - 15:00			</div>
+		</nav>
+	</header>
+	<table border="0">
+		
+		<tr>
+			<td><img src="products/IMG-20201221-WA0014.jpg846"></td>
+		</tr>
+		<tr>
+			<td>
+					<div class="z">
+							<div id="">food food food food  
+							</div>
+						<span id="-1" class="y"></span>
+					</div>R
+					<div id="1" class="x">30
+					</div>
+					<input type ='submit' class="circle_button" value ='-' onclick ="remove(1,-1);">
+					<input type ='submit' class="circle_button" value ='+' onclick ="add(1,-1,'food food food food ');">
+			</td>
+		
+		</tr>
+
+		
+		<tr>
+			<td><img src="products/IMG-20201221-WA0012.jpg766"></td>
+		</tr>
+		<tr>
+			<td>
+					<div class="z">
+							<div id="">the food 
+							</div>
+						<span id="-2" class="y"></span>
+					</div>R
+					<div id="2" class="x">30
+					</div>
+					<input type ='submit' class="circle_button" value ='-' onclick ="remove(2,-2);">
+					<input type ='submit' class="circle_button" value ='+' onclick ="add(2,-2,'the food');">
+			</td>
+		
+		</tr>
+
+		
+		<tr>
+			<td><img src="products/IMG-20201221-WA0014.jpg935"></td>
+		</tr>
+		<tr>
+			<td>
+					<div class="z">
+							<div id="">food 
+							</div>
+						<span id="-3" class="y"></span>
+					</div>R
+					<div id="3" class="x">30
+					</div>
+					<input type ='submit' class="circle_button" value ='-' onclick ="remove(3,-3);">
+					<input type ='submit' class="circle_button" value ='+' onclick ="add(3,-3,'food');">
+			</td>
+		
+		</tr>
+
+		
+		<tr>
+			<td><img src="products/IMG-20201221-WA0014.jpg947"></td>
+		</tr>
+		<tr>
+			<td>
+					<div class="z">
+							<div id="">foo oood 
+							</div>
+						<span id="-4" class="y"></span>
+					</div>R
+					<div id="4" class="x">30
+					</div>
+					<input type ='submit' class="circle_button" value ='-' onclick ="remove(4,-4);">
+					<input type ='submit' class="circle_button" value ='+' onclick ="add(4,-4,'foo oood');">
+			</td>
+		
+		</tr>
+
+		
+		<tr>
+			<td><img src="products/IMG-20201221-WA0010.jpg113"></td>
+		</tr>
+		<tr>
+			<td>
+					<div class="z">
+							<div id="">FOOD 
+							</div>
+						<span id="-5" class="y"></span>
+					</div>R
+					<div id="5" class="x">30
+					</div>
+					<input type ='submit' class="circle_button" value ='-' onclick ="remove(5,-5);">
+					<input type ='submit' class="circle_button" value ='+' onclick ="add(5,-5,'FOOD');">
+			</td>
+		
+		</tr>
+
+			
+	</table>
+	<div class="total">
+		<p id="total">0</p>		
+	</div>
+	<div class="order">
+		<input type="submit" name="" onclick="place_order();" value="Order">	
+	</div>
+	<div>
+		<input type="text" name="" id="order">	
+	</div>
+	<script type="text/javascript">
+
+		function add(x,y,d) {
+			var z;
+			var b;
+			var x;
+			var c;
+			a = document.getElementById('total');
+			z = document.getElementById('total').innerText;
+			b = z;
+			x = document.getElementById(x).innerText;
+			b = b-(-x);
+			a.innerText = b;
+			c = document.getElementById(y).innerText;
+			c++;
+			y = document.getElementById(y).innerText = c;
+			// console.log(d,x,c,b);
+			// place_order();
+
+		}
+
+		function remove(x,y) {
+			var z;
+			var b;
+			var x;
+			var c;
+			a = document.getElementById('total');
+			z = document.getElementById('total').innerText;
+			b = z;
+			x = document.getElementById(x).innerText;
+			b = b-(+x);
+			if (b < 0) {
+				b = 0;
+			}
+			a.innerText = b;
+			c = document.getElementById(y).innerText;
+			c--;
+			if (c < 0) {alert('Reset balance');location.reload();}
+			if (c == 0) {c = '';}
+			y = document.getElementById(y).innerText = c;
+		}
+
+		z = document.getElementsByClassName('z');
+
+		for (var i = 0; i <= z.length -1; i++) {
+				// console.log(z[i]);
+				if (z[i].innerText.length > 5) {z[i].style.fontSize = "10px";}
+			}
+
+			function place_order(){
+
+				// document.getElementById('order').value ='';
+				localStorage.clear();
+
+				a = document.getElementById('order').value;
+				y = document.getElementsByClassName('y');
+				z = document.getElementsByClassName('z');
+				x = document.getElementsByClassName('x');
+				total = document.getElementById('total').innerText;
+
+				for (var i = 0; i < y.length; i++) {
+					if (y[i].innerText !== '') {
+						s = z[i].innerText + ' '+ x[i].innerText;	
+				 localStorage.setItem(i,s);
+				 localStorage.setItem('Total',total);
+					} 
+
+				}
+				// console.log(total);
+				console.log(localStorage);
+				
+			}	
+
+		</script>
+
+		
+	<footer>
+		<!-- <p>&copy;</p> -->
+	</footer>
+	<br>
+	<br>
+</body>
+</html>

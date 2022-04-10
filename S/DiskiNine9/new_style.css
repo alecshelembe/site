@@ -1,0 +1,305 @@
+html{
+	scroll-behavior: smooth;
+	-webkit-tap-highlight-color: transparent;
+}
+
+* {
+	line-height: 35px;
+	padding: 0;
+	margin: 0; 
+	text-decoration:none;
+	list-style: none;
+	box-sizing: border-box;
+	font-size: 16px;
+}
+
+body{
+	margin: 20px;
+	font-family: 'Noto Sans JP', sans-serif;
+}
+
+header{
+	text-align: center;
+}
+
+nav li{
+	display: inline;
+}
+
+li{
+	margin: 5px;
+	display: block;
+	font-size: 20px;
+}
+
+li a{
+	color: black;
+	font-size: 17px;
+}
+
+nav img{
+	max-height: 55px;
+	width: auto;
+	margin-top: 15px;
+	float: left;
+	margin-left: 20px;
+}
+
+ul{
+	margin-top: -5px;
+}
+
+button{
+	padding: 16px 32px;
+	background-color: black;
+	color: white;
+	border:none;
+	font-weight: bold;
+	cursor: pointer;
+	margin-right: 30px;
+	float: right;
+	margin-top: -15px;
+}
+
+h1{
+	font-size: 50px;
+	line-height: normal;
+}
+
+h2{
+	text-align: center;
+	margin: 30px;
+	font-size: 30px;
+	margin-top: 100px;
+}
+
+h3{
+	margin-top:70px;
+	margin-bottom:70px;
+	text-align: center;
+	font-size: 30px;
+}
+
+h4{
+	text-transform: uppercase;
+	font-size: 20px;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+h5{
+	text-align: center;
+}
+
+p{
+	text-align: center;
+	margin: 20px;
+	font-size: 20px;
+	padding:40px 40px;
+}
+
+div ul{
+	text-align: center;
+	margin-top: 20px;
+}
+
+div img{
+	width: 100%;
+	height: auto;
+	padding: 30px;
+	padding-top: 60px;
+}
+
+footer p{
+	margin-top: 40px;
+	color: grey;
+}
+
+.background{
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px; 
+}
+
+.background img {
+	width: 100%;
+	height: auto;
+	padding: 30px;
+	padding-top: 60px;
+}
+
+.background h2{
+	color: grey;
+}
+/*float is used to show paragraphs, divs or imgs side by side*/
+
+.float{
+	display: inline-block;
+	width: 100%;
+}
+
+.float-half{
+	float: left;
+	width: 50%;
+}
+
+.float-three{
+	float: left;
+	width: 33%;
+	text-align: center;
+}
+
+.float-three img{
+	width: 80%;
+}
+
+.float-three p{
+	padding:40px 40px;	
+}
+
+.space-down{
+	margin-bottom: 80px;
+}
+
+.space-up{
+	margin-top: 80px;
+}
+
+.left{
+	text-align: left;
+}
+
+.box{
+	margin-top: 90px;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+.box .text{
+	padding: 5px;
+	display: inline-block;
+	margin-bottom: 20px;
+	border:solid;
+	cursor: pointer;
+	border-right-style: none;
+	border-top-style: none;
+	border-left-style: none;
+	width: 100%;
+}
+
+.confirm{
+	padding: 5px 15px;
+	margin-top: 15px;
+	cursor: pointer;
+}
+
+.grey{
+	color: grey;
+}
+
+.no-padding p{
+	padding:0px 0px;
+	line-height: 10px;
+}
+
+.active{
+	text-decoration: underline;
+	/*page that is active*/
+}
+
+nav p{
+	display: none;
+}
+
+@media(max-width: 850px){
+
+	h2{
+		margin-right: 10px;
+		margin-left: 10px;
+		margin-top: 40px; 
+	}
+
+	p{
+		margin-right: 5px;
+		margin-left: 5px;
+	}
+
+	.float{
+		display: block;
+		width: 100%;
+	}
+
+	.float-half{
+		display: block;
+		width: 100%; 
+	}
+
+	.float-three{
+		display: block;
+		width: 100%;
+	}
+
+	p{
+		padding:20px 20px;
+	}
+
+}
+
+@media(max-width: 1150px){
+	
+	li{
+		display: block;
+		margin-top: 20px;
+	}
+
+	nav li{
+		display: block;
+	}
+
+	ul {
+		display: inline; 
+	}
+
+	nav ul{
+		width: 100%;
+		display: inline-block
+	}
+
+	nav li a{
+		font-size: 30px;
+	}
+
+	nav img{
+		max-height: 40px;
+		margin-left: 10px;
+	}
+
+	button{
+		float: none;
+		font-size: 20px;
+		margin-top: 10px;
+		margin-left: 25px;
+	}
+
+	nav p{
+		float: right;
+		margin-top: 9px;
+		display: block;
+		font-size: 18px;
+		margin-right: 20px;
+		cursor: pointer;
+		padding: 10px;
+		
+	}
+
+	.single{
+		display: inline-block;
+		
+	}
+
+	#menu:checked ~ nav ul{
+		display: none;
+	} 
+
+}

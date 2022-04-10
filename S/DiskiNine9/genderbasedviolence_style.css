@@ -1,0 +1,45 @@
+img{
+	height: 150px;
+	margin-bottom: 0px;
+}
+
+h1{
+	margin-top: 0px;
+}
+
+h2{
+	margin-top: 0px;
+}
+
+h4{
+	text-transform: none;
+	margin-top: 0px;
+}
+
+.big-picture{
+	text-align: center;
+	width: 100%;
+}
+
+.float-five{
+	float: left;
+	width: 20%;
+	text-align: center;
+}
+
+@media(max-width: 850px){
+
+	.float-five{
+		display: block;
+		width: 100%; 
+	}	
+
+	.float-five img{
+	width: 80%;
+	}
+
+	.big-picture img{
+	width: 80%;
+	}
+
+}
