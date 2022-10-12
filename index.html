@@ -1,91 +1,256 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <meta name="keywords" content="Alec Shelembe Website" />
-
-  <link rel="shortcut icon" href="pictures/SA logo.png" type="image/x-icon">
-  <meta name="description" content="Alec Shelembe Website">
-  <meta name="author" content="Alec Shelembe">
-  <meta name="generator" content="">
-  <title>Alec Shelembe</title>
- <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Yanone+Kaffeesatz:wght@600&display=swap" rel="stylesheet">
- <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
-  />
-  <style>
-
-    body{
-     background-color: #f5f5f5;
-     font-family: 'Merriweather', serif;
-   }
-
-   img{
-    margin-right: 10px;
-  }
-  h1 {
-    font-family: 'Yanone Kaffeesatz', sans-serif;
-    font-size: 50px;
-  }
-  @media (max-width: 568px) {
-   {
-   }
-   img {
-    width: 100%;
-    margin-right: 0px;
-  }
-  p {
-    margin-left: 10px;
-  }
-  div{
-    margin-left: 10px;
-  }
-}
-
-</style>
-<!-- Custom styles for this template -->
-<link href="cover.css" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Alec Shelembe - Porfolio</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet"
+        type="text/css" />
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
 </head>
-<body style="margin: 0px;">
-  <img src="pictures/alec formal.jpg" align="left" width="50%" class="animate__animated animate__fadeIn">
-  <div style="display: inline-block;" class=" animate__animated animate__fadeIn">
-    <h1 style="margin: 0px; margin-top: 10px;">Alec Shelembe</h1>
-    <span style="color: grey; font-size: large;"><strong>Software <span style="color:  #2554C7;">developer</span></strong></span>
-  </div> 
-  <p style="color: grey;" class=" animate__animated animate__fadeIn">
-    <strong>Hello, Welcome</strong> to my website. <br><br>I am a self taught developer.<br><br>contact me.  
-    <a href="mailto:ashelembe96@gmail.com" style="color: grey;">Send an e-mail</a> <strong style="color:  #2554C7;"></strong>
-     <br>
-    <br>
-    <a href="https://www.instagram.com/alec_shelembe/" style="color: grey;">Instagram</a> , <a href="www.linkedin.com/in/alecshelembe/" style="color: grey;">Linked[in]</a>
-    <br> 
-    Feel free to look at my projects on Github, profile ~ <a href="https://github.com/alecshelembe/" style="color: grey;">alecshelembe</a>
-    <br>
-    ---------------------------------------
-    <br>
-    <a href="https://www.instagram.com/wethinkcode/" style="color: grey;">Wethinkcode Bootcamp &#x2713</a>
-    <br>
-    <br>
-    <a href="https://www.instagram.com/deviare.africa/" style="color: grey;">Deviare - AWS Technical Essentials &#x2713</a>
-    <br>
-    <br>
-    <a href="https://www.youracclaim.com/badges/90561250-ae3c-4c58-aed7-1c598d9d524e/public_url/" style="color: grey;"> AWS Certified Cloud Practitioner &#x2713</a>
-    <br>
-     <img src="https://images.youracclaim.com/size/220x220/images/68468004-5a85-4f3b-bc58-590773979486/AWS-CloudPractitioner-2020.png" style="width:300px;">
-    <br>
-    HTML CSS PHP JAVASCRIPT &#x2713
-    <br>
-    ---------------------------------------
-  </p>
-  <h2 style="color: grey; padding-left:20px;">School</h2>
-  <p style="color: grey;">Aloe Ridge Primary</p>
-  <p style="color: grey;">Boys College</p>
+
+<script>
+    var on = false;
+    function maketheme() {
+        var bulb = document.getElementById("light");
+        if (on) {
+            // on = true;
+            bulb.style.color = "black";
+            document.body.style.background = 'white';
+            // document.getElementById("").style.color = '';
+            document.getElementById('light-button').style.color = 'black';
+            document.getElementById('light-nav-title').style.color = 'black';
+            document.getElementById('light-nav').classList.add("bg-light");
+            document.getElementById('light-nav').classList.remove("bg-dark");
+            document.getElementById('footer').classList.add("bg-light");
+            document.getElementById('footer').classList.remove("bg-dark");
+            // document.getElementById('footer').style.color = 'black';
+        } else {
+            // on = true;
+            bulb.style.color = "white";
+            document.body.style.background = 'black';
+            document.getElementById('light-button').style.color = 'white';
+            document.getElementById('light-nav-title').style.color = 'white';
+            document.getElementById('light-nav').classList.add("bg-dark");
+            document.getElementById('light-nav').classList.remove("bg-light");
+            document.getElementById('footer').classList.add("bg-dark");
+            document.getElementById('footer').classList.remove("bg-light");
+            // document.getElementById('footer').style.color = 'black';
+            // document.getElementById("").style.color = '';
+
+        }
+
+        on = !on;
+
+    }
+</script>
+
+<body id="light">
+    <!-- Navigation-->
+    <nav id='light-nav' class="navbar navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" id='light-nav-title' href="#!">Alec Shelembe - Portfolio</a>
+            <a class="btn btn-success btn-sm" target="_blank"
+                href="https://www.linkedin.com/in/alecshelembe/">LinkedIn</a>
+        </div>
+    </nav>
+    <div class="text-center">
+        <a onclick="maketheme();" id="light-button" style="margin:20px;" class="btn btn-sm btn-outline-dark"><i
+                class="bi bi-brightness-high-fill"></i>
+            Theme</a>
+    </div>
+
+    <!-- Image Showcases-->
+    <section class="showcase">
+        <div class="container-fluid p-0">
+            <div class="row g-0">
+                <div class="col-lg-6 order-lg-2 text-white showcase-img"
+                    style="background-image: url('assets/img/alec-red-shirt.jpg');border-radius: 5px;"></div>
+                <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                    <h1>I am a Software Developer</h1>
+                    <a href="tel:0727237808">Phone</a>
+                    <br>
+                    <br>
+                    <h2>My grade 9 spark..</h2>
+                    <p class="lead mb-0">I have always loved computers, I was fortunate, to grow up with windows XP in
+                        primary school. I built small games using powerpoint, they were bad :) but they played and I
+                        enjoyed it, so it
+                        all begun.</p>
+                    <br>
+                    <p class="lead mb-0">
+                        In grade 9. I came across PHP, a programming language. I studied hard using online tutorials to
+                        teach myself what I would only learn later is backend development.
+                        By Matric I could build full websites with sign in and login features. The
+                        codebase was not too good but it still worked and I had taught myself basic programming
+                        principles such as variables, loops, functions etc... all this by myself in High School.
+
+                    </p>
+                </div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 text-white showcase-img"
+                    style="background-image: url('assets/img/bg-showcase-2.jpg');border-radius: 5px;"></div>
+                <div class="col-lg-6 my-auto showcase-text">
+                    <h2>Where I am today</h2>
+                    <p class="lead mb-0">My Journey in development continues, So far waken from sleep I can you about
+                        how I am a,</p>
+                    <br>
+                    <p class="lead mb-0">Dedicated Full stack developer with proven ability to build resilient platform
+                        and systems.
+                        Skilled in
+                        programming, design and implantation, following best practices.
+                    </p>
+                    <p>
+                    <h3>Skills</h3>
+                    Reactjs | Nodejs | PHP (Proficient) | Laveral (Framework) | Docker certified | Kubernetes | SQL
+                    | JavaScript | HTML | AWS certified | C | CSS | Java | python|
+                    </p>
+                    <div>
+                        <img src="./assets/img/aws.png"
+                            style="display:block; border-radius: 10px; float: left; height: 80px; margin: 10px;" />
+                        <img src="./assets/img/docker.png"
+                            style="display:block; border-radius: 10px; float: left; height: 80px; margin: 10px;" />
+                        <img src="./assets/img/htmlcss.png"
+                            style="display:block; border-radius: 10px; float: left; height: 80px; margin: 10px;" />
+                        <img src="./assets/img/javascript.png"
+                            style="display:block; border-radius: 10px; float: left; height: 80px; margin: 10px;" />
+                        <img src="./assets/img/linux.png"
+                            style="display:block; border-radius: 10px; float: left; height: 80px; margin: 10px;" />
+                        <img src="./assets/img/php.png"
+                            style="display:block; border-radius: 10px; float: left; height: 80px; margin: 10px;" />
+                        <img src="./assets/img/reactjs.png"
+                            style="display:block; border-radius: 10px;  float: left; height: 80px; margin: 10px;" />
+                    </div>
+                    <br>
+                    <div style="clear:both;"></div>
+                    <br>
+
+                    <p class="lead mb-0">My favorite project to present to an employer is my full ecommerce website
+                        platform. I built the
+                        front-end using JavaScript with bootstrap library for a modern and responsive UI. I used vanilla
+                        PHP and JavaScript for the backend. I used the jQuery framework with SQL to make backend calls
+                        to the MYSQL database. with best practices (MVC) built in the code. The payment process is
+                        completed with a world-wide payment gateway API as well as integrated email acting as receipts.
+                    </p>
+                    <br>
+                    <a target="_blank" href="https://kingwebsites.co.za/shop/">Click here for the live project</a>
+                    <center>
+                        <iframe allowfullscreen width="85%" height="300px" style="border-radius:20px; margin: 20px;"
+                            src="https://www.youtube.com/embed/dYXVIeIvHZA"></iframe>
+                    </center>
+                    <br>
+                    <h4>Reactjs Task Tracker</h4>
+                    <p>
+                        Here I build a simple react app to show my understanding of Reactjs with components and
+                        usestate.
+                    </p>
+                    <a target="_blank" href="https://kingwebsites.co.za/react-task-tracker/build/">Click here to see the
+                        project</a>
+                </div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 order-lg-2 text-white showcase-img"
+                    style="background-image: url('assets/img/IMG_0988.jpg');border-radius: 5px;"></div>
+                <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                    <h2>Experience </h2><br>
+
+                    <a target="_blank" href="https://kingwebsites.co.za/Alec-Shelembe-resume.pdf">View Resume</a>
+                    <br>
+                    <br>
+                    <p><i>3 Months 2022</i><br>
+                        <strong> Developer, Johannesburg Gauteng</strong>
+                        <br>
+                        <br>
+                        I designed, tested and built a full website for a respected high School in Johannesburg. This
+                        allowed them to have an online presence and unique domain email system for teachers and staff.
+                        <br>
+                        <a target="_blank" href="https://westburysecondary.com/">Westburysecondary</a>
+                        <br>Letter of recommendation below
+                    </p>
+                    <br>
+                    <p><i>6 Months 2022</i><br>
+                        <strong> Naspers 400 , Johannesburg Gauteng – Online by Deviare </strong>
+                        <br>
+                        <br>
+                        I worked with a team to design a modern scalable SAAS (software as a service product) on AWS
+                        cloud infrastructure. This allowed the company to preview their analytics and resources as well
+                        as debug any issues before launch.
+
+                        Here, My task was to focus on configuring Docker Swam with kubernetes and CLI. This project was
+                        completed in a team of 5 and I learnt how to work on large scale project working with others
+                        with more, and others with less experience then me
+
+                    </p>
+                    <br>
+                    <p><i>2 Months 2021</i>
+                        <br>
+                        <strong>Data capture Department of basic education (Johannesburg)</strong>
+                        <br>
+                        <br>
+                        I captured data for the Department of Education of South Africa. This allowed the department to
+                        make better decisions on reliable captured information.
+
+                        Key responsibilities in operations management
+                        Unique data collection of unique keys in the data base.
+                    </p>
+                    <br>
+                    <p><i>12 Months 2021</i>
+                        <br>
+                        <strong>Full Stack Web Developer + tutor. Johannesburg, Gauteng - Sci-bono Discovery Science
+                            Center</strong>
+                        <br>
+                        <br>
+                        This was full sponsored program, I trained and taught other students (30) how to build full
+                        websites applications including cross platform mobile applications using react native. I help
+                        the science center teach much needed skills for the modern workplace to young starting
+                        developers with my preexisting experience.
+                        <br>
+                        <a target="_blank" href="https://kingwebsites.co.za/Full-stack-ref.JPG">Full Stack
+                            Certification</a>
+                    </p>
+                    <br>
+                    <p><i>3 Months 2020</i><br>
+                        <strong>Amazon program, Johannesburg Gauteng – Online by </strong>
+                        <br>
+                        <br>
+                        Cloud internship, I learned how to configure virtual machines with the SAAS products offered by
+                        AWS. This taught me how to operate the Linux terminal and a introduction to ethical hacking with
+                        Kali Linux.
+                        <br>
+                        <a target="_blank"
+                            href="https://www.credly.com/badges/90561250-ae3c-4c58-aed7-1c598d9d524e/public_url/">AWS
+                            Cloud Certificate</a>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer-->
+    <footer id='footer' class="footer bg-light">
+        <div class="container text-center">
+            <img src="./assets/img/letter.cv.png" style="border-radius: 5px;" width="100%" height="auto">
+            <br>
+            <br>
+            <br>
+            <p>Thank you - Alec Shelembe 2022</p>
+            <a href="tel:0727237808">Contact Number</a>
+        </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
 </body>
-<footer>
-  <p style="height: 300px;"></p>
-  <p style="text-align: center; font-size: small; color: grey;">2021 &copy; ALEC SHELEMBE</p>
-</footer>
+
 </html>
