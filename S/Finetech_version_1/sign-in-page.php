@@ -57,7 +57,7 @@ https://templatemo.com/tm-562-space-dynamic
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li><a href="index.php">Return Home</a></li> 
+              <li><a href="index.html">Return Home</a></li> 
               <li></li> 
             </ul>        
             <a class='menu-trigger'>
