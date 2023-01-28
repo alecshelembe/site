@@ -64,7 +64,7 @@ https://templatemo.com/tm-562-space-dynamic
               <li class="scroll-to-section"><a href="#portfolio">Portfolio</a></li>
               <li class="scroll-to-section"><a href="#blog">Blog</a></li> 
               <li class="scroll-to-section"><a href="#contact">Message Us</a></li> 
-              <li><div class="main-red-button"><a href="sign-in-page.php">Sign In</a></div></li> 
+              <li><div class="main-red-button"><a href="sign-in-page.html">Sign In</a></div></li> 
             </ul>        
             <a class='menu-trigger'>
                 <span>Menu</span>
