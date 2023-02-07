@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Profiles</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet"
+        type="text/css" />
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<script>
+    var on = false;
+    function maketheme() {
+        var bulb = document.getElementById("light");
+        if (on) {
+            // on = true;
+            bulb.style.color = "black";
+            document.body.style.background = 'white';
+            // document.getElementById("").style.color = '';
+            document.getElementById('light-button').style.color = 'black';
+            document.getElementById('light-nav-title').style.color = 'black';
+            document.getElementById('light-nav').classList.add("bg-light");
+            document.getElementById('light-nav').classList.remove("bg-dark");
+            document.getElementById('footer').classList.add("bg-light");
+            document.getElementById('footer').classList.remove("bg-dark");
+            // document.getElementById('footer').style.color = 'black';
+        } else {
+            // on = true;
+            bulb.style.color = "white";
+            document.body.style.background = 'black';
+            document.getElementById('light-button').style.color = 'white';
+            document.getElementById('light-nav-title').style.color = 'white';
+            document.getElementById('light-nav').classList.add("bg-dark");
+            document.getElementById('light-nav').classList.remove("bg-light");
+            document.getElementById('footer').classList.add("bg-dark");
+            document.getElementById('footer').classList.remove("bg-light");
+            // document.getElementById('footer').style.color = 'black';
+            // document.getElementById("").style.color = '';
+
+        }
+
+        on = !on;
+
+    }
+</script>
+
+<body id="light">
+    <!-- Navigation-->
+    <nav id='light-nav' class="navbar navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" id='light-nav-title' href="#">Profiles</a>
+        </div>
+    </nav>
+    <div class="text-center">
+        <a onclick="maketheme();" id="light-button" style="margin:20px;" class="btn"><i
+                class="bi bi-brightness-high-fill"></i>
+            Theme</a>
+    </div>
+
+    <!-- Image Showcases-->
+    <section class="showcase">
+        <div class="container-fluid p-0">
+            <div class="row g-0">
+                <div class="col-lg-6 order-lg-2 text-white showcase-img"
+                    style="background-image: url('pictures/WhatsApp\ Image\ 2023-02-06\ at\ 09.33.02.jpeg');border-radius: 5px; background-size: contain, cover; background-repeat: no-repeat; background-position: center; "></div>
+                <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                    <!-- <h1>I am a Software Developer</h1> -->
+                    <!-- <a href="tel:#">Phone</a> -->
+                    <br>
+                    <br>
+                    <h2>Jaydern</h2>
+                    <p class="lead mb-0">My Name is Jaydern Thabang  Ngoepe.I am a hardworking man who is  a crypto enthusiasts and and working on becoming a Corporate Lawyer .My profession when it comes to JAYIDE Legacy I will be the COO ,and I will  implement policies to promote company culture and vision and to oversee operations to keep businesses on track.My main goal is for Our company to have a Legacy due to its prospects.
+                    </p>
+                    
+                </div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 text-white showcase-img"
+                    style="background-image: url('pictures/WhatsApp\ Image\ 2023-02-06\ at\ 09.33.02\ \(1\).jpeg');border-radius: 5px; background-size: contain, cover; background-repeat: no-repeat; background-position: center;"></div>
+                <div class="col-lg-6 my-auto showcase-text">
+                    <h2>Thandile</h2>
+                    <p class="lead mb-0">My name is UThandile Malepile and I am am hard working lady who is working  on becoming  a automotive My profession when it comes  to JAYIDE Legacy I am a CEO and my main targert is to Leading and motivating subordinates to advance employee engagement develop a high performing managerial team and mostly overseeing all operations and business activities to ensure they produce the desired results and are consistent with the overall strategy and mission.  My main goal as a CEO is to maintain sustainability, profitability and development of the  company ,Strive for specificity.prioritize,Maintain accountability,Monitor progress towards the desired objective and mostly to Commemorate milestones along the way.</p>
+                    
+                </div>
+            </div>
+      
+        </div>
+        <br>
+        <br>
+    </section>
+    <!-- Footer-->
+    <footer id='footer' class="footer bg-light">
+        <div class="container text-center">
+             <span>Copy Right 2022</span>
+            <!-- <a href="tel:0727237808">Contact Number</a> -->
+        </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
