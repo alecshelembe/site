@@ -1,15 +1,22 @@
 <?php
-
 session_start();
 
-// the code bellow connects to the mysql database
 $dbsevername = "localhost";
-// username
 $dbusername = "root";
-// password
 $dbpassword = "";
-// database name
-$dbname = "connex";
+$dbname = "finetrade";
+
+// sever
+// $dbsevername = "localhost";
+// $dbusername = "finetrad_shelemz";
+// $dbpassword = "RD9i-fo^kgr=";
+// $dbname = "finetrad_wp990";
+
+// $store_email = 'alecshelembe@gmail.com';
+// $store_name = 'finetrades';
+// $TnC_link = "https://finetrades.co.za/software-agreement.pdf";
+// $domain = 'https://' . $_SERVER['HTTP_HOST'];
+
 
 $conn = mysqli_connect($dbsevername, $dbusername, $dbpassword);
 
@@ -154,46 +161,28 @@ function post_check($var)
 
 	$value = $_POST[$var];
 
+	sanitizeString($value);
 
-	if ($var == 'email') {
-		$value = filter_var($value, FILTER_VALIDATE_EMAIL);
-		if ($value === false) {
-			echo ('Invalid Email');
-			stop();
-		}
+	if ($value == null) {
+		echo ("$var input left blank.");
+		stop();
 	}
-
-	if ($var == 'terms') {
-		if ($value == 1) {
-			# code...
-		} else {
-			echo "Please agree to terms and conditions";
-			stop();
-		}
-	}
-
-
-	// $var = strip_tags($var); 
-
-	if (strlen($value) > 10000) {
-		alert("Charachter break fatal error");
-		redirect_back();
-	}
-	// $var = addslashes($var);
-	$value = trim(htmlspecialchars($value));
 
 	return $value;
 }
 
 function get_check($var)
 {
-	// if (!isset($_POST[$var])) {
-	// 	alert("$var input left blank.");
-	// 	redirect_back();
-	// }
-	$var = $_GET[$var];
-	// check_if_empty($var);
-	return $var;
+	$value = $_GET[$var];
+
+	sanitizeString($value);
+
+	if ($value == null) {
+		echo ("$var input left blank.");
+		stop();
+	}
+
+	return $value;
 }
 
 function sign_out()
@@ -256,7 +245,7 @@ function get_device()
 	return preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]);
 }
 
-function check_if_exists($varconn, $dbname, $table, $row_title, $info)
+function check_if_exists($varconn, $dbname, $table, $row_title, $info,$message)
 {
 
 	$query = "SELECT `$row_title` FROM `$table` WHERE `$row_title` = '$info';";
@@ -269,7 +258,7 @@ function check_if_exists($varconn, $dbname, $table, $row_title, $info)
 	$row = mysqli_num_rows($result);
 	if ($row > 0) {
 
-		echo ("The $info credential already exist");
+		echo ("$info$message");
 		// redirect_back();
 		stop();
 	}
@@ -294,7 +283,7 @@ function check_must_exist($varconn, $dbname, $table, $row_title, $info)
 	}
 }
 
-function check_if_exists_same_page($varconn, $dbname, $table, $row_title, $info)
+function check_if_exists_same_page($varconn, $dbname, $table, $row_title, $info,$message)
 {
 
 	$query = "SELECT `$row_title` FROM `$table` WHERE `$row_title` = '$info';";
@@ -306,13 +295,13 @@ function check_if_exists_same_page($varconn, $dbname, $table, $row_title, $info)
 
 	$row = mysqli_num_rows($result);
 	if ($row > 0) {
-		echo ("The $info credential already exist");
+		echo ("$info$message");
 		stop();
 	}
 }
 
 
-function check_if_not_exists_same_page($varconn, $dbname, $table, $row_title, $info)
+function check_if_not_exists_same_page($varconn, $dbname, $table, $row_title, $info,$message)
 {
 
 	$query = "SELECT `$row_title` FROM `$table` WHERE `$row_title` = '$info';";
@@ -324,7 +313,7 @@ function check_if_not_exists_same_page($varconn, $dbname, $table, $row_title, $i
 
 	$row = mysqli_num_rows($result);
 	if ($row == 0) {
-		echo ("The $info credential does not exist");
+		echo ("$info$message");
 		stop();
 	}
 }
@@ -404,6 +393,27 @@ function pair_for_login($varconn, $table, $row_title, $info, $security_key, $sec
 }
 
 
+function select_all($varconn, $dbname, $table, $row_title)
+{
+
+	$query = "SELECT `$row_title` FROM `$table`;";
+
+	// echo("$query");
+	
+	$result = mysqli_query($varconn, $query);
+
+	$items = array();
+      
+	while ($row = mysqli_fetch_assoc($result)) {
+		$value = $row[$row_title];
+		array_push($items,$value);
+	}
+	
+	return $items;
+
+
+}
+
 function update_info($varconn, $dbname, $table, $row_title, $identifier_row, $info, $identifier_info)
 {
 
@@ -433,6 +443,33 @@ function return_info($varconn, $table, $row_title, $identifier_row, $identifier_
 	return $value;
 }
 
+function resize_image($file, $w, $h, $crop=FALSE) {
+    list($width, $height) = getimagesize($file);
+    $r = $width / $height;
+    if ($crop) {
+        if ($width > $height) {
+            $width = ceil($width-($width*abs($r-$w/$h)));
+        } else {
+            $height = ceil($height-($height*abs($r-$w/$h)));
+        }
+        $newwidth = $w;
+        $newheight = $h;
+    } else {
+        if ($w/$h > $r) {
+            $newwidth = $h*$r;
+            $newheight = $h;
+        } else {
+            $newheight = $w/$r;
+            $newwidth = $w;
+        }
+    }
+    $src = imagecreatefromjpeg($file);
+    $dst = imagecreatetruecolor($newwidth, $newheight);
+    imagecopyresampled($dst, $src, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
+
+    return $dst;
+}
+
 
 function image_process($varconn,$dir,$image,$file_type,$file_size,$file_tem_loc){
 
@@ -447,9 +484,15 @@ function image_process($varconn,$dir,$image,$file_type,$file_size,$file_tem_loc)
 		case 'image/tiff':  $ext = 'tiff';  break;	
 		case 'image/jfif':  $ext = 'jfif';  break;	
 		default:       
-		alert("$file_type is not a valid image file $image unallowed");
-		redirect_back();
+		alert("The image with file type $file_type is not allowed. The system will proceed.");
+		$ext = null;
+		break;
+		// redirect_back();
 	} 
+
+	if($file_size > 2097152 ){
+		alert('This image is too large, please choose one less than 2 MB. The system will proceed.');
+	}
     
 	if ($ext){	
         $image = "$image".'.'."$ext";
@@ -458,51 +501,9 @@ function image_process($varconn,$dir,$image,$file_type,$file_size,$file_tem_loc)
 		return "$image";
     } else {
 		alert("Something went wrong with the upload. Try a different one.");
-		redirect_back();
+		// redirect_back();
     }
 
-}
-
-
-function image_process_2($varconn, $dir, $image, $file_type, $file_size, $file_tem_loc)
-{
-
-
-	if (is_dir($dir) === false) {
-		mkdir($dir);
-	}
-	switch ($file_type) {
-		case 'image/jpeg':
-			$ext = 'jpg';
-			break;
-		case 'image/gif':
-			$ext = 'gif';
-			break;
-		case 'image/png':
-			$ext = 'png';
-			break;
-		case 'image/tiff':
-			$ext = 'tiff';
-			break;
-		case 'image/jfif':
-			$ext = 'jfif';
-			break;
-		default:
-			alert("$file_type is not a valid image file $image unallowed");
-	}
-
-	if ($ext) {
-		$image = "$image" . '.' . "$ext";
-
-		$file_store = "$dir/$image";
-
-		move_uploaded_file($file_tem_loc, $file_store);
-
-		return "$image";
-	} else {
-		alert("2nd image not uploaded, upload a different one");
-		return null;
-	}
 }
 
 function remove($varconn, $dbname, $table, $row_title, $info)
@@ -542,9 +543,9 @@ function send_email($sender_email, $reciever_email, $reciever_name, $subject, $b
 		$mail->setFrom("$sender_email", 'Noreply');
 		$mail->addAddress("$reciever_email");     //Add a recipient
 		// $mail->addAddress("$sender_email");               //Name is optional
-		$mail->addReplyTo('admin@finetrades.co.za', "$reciever_name");
-		$mail->addBCC('noreply@finetrades.co.za');
-		// $mail->addCC('copyofemail@finetrades.co.za');
+		// $mail->addReplyTo('admin@finetrades.co.za', "$reciever_name");
+		// $mail->addBCC('noreply@finetrades.co.za');
+		$mail->addCC('admin@finetrades.co.za');
 		//$mail->addBCC('bcc@example.com');
 
 		//Attachments
@@ -561,6 +562,7 @@ function send_email($sender_email, $reciever_email, $reciever_name, $subject, $b
 		$mail->send();
 
 	} catch (Exception $e) {
+		// echo"$e";
 		alert("Oops. Something went wrong with sending you the email. Please contact support");
 		stop();
 	}
@@ -570,51 +572,64 @@ function send_email($sender_email, $reciever_email, $reciever_name, $subject, $b
 
 function send_to_store_email($sender_email, $reciever_email, $reciever_name, $subject, $body)
 {
-	////////////////////////////////////////////////////////////////
+//  nothing happens remove function from code
+// A5BNXF]VS]vv
+}
 
-	//Instantiation and passing `true` enables exceptions
-	$mail = new PHPMailer(true);
+function show_products($varconn,$dbname,$table,$row_title,$order_title,$end_num){
 
-	try {
-		//Server settings
-		// $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-		$mail->isSMTP();                                            //Send using SMTP
-		$mail->Host       = 'mail.finetrades.co.za';                     //Set the SMTP server to send through
-		$mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-		$mail->Username   = "$sender_email";                     //SMTP username
-		$mail->Password   = '';                               //SMTP password
-		$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;         //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-		$mail->Port       = 465;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+	$query = "SELECT `$row_title`,`$order_title` FROM `$table` ORDER BY `$order_title` DESC LIMIT $end_num;";
+	// exit($query);
+            
+	$result = mysqli_query($varconn, $query) or die(mysqli_error($varconn));
 
-		//TCP port to connect to, use 587 for `PHPMailer::ENCRYPTION_STARTTLS` above
+    $row = mysqli_num_rows($result);
+    if ($row == 0) {
+    echo "Nothing here right now";
+    } else {
 
-		//Recipients
-		$mail->setFrom("$sender_email", 'Noreply');
-		$mail->addAddress("$reciever_email");     //Add a recipient
-		// $mail->addAddress("$sender_email");               //Name is optional
-		$mail->addReplyTo('admin@finetrades.co.za', "$reciever_name");
-		$mail->addBCC('noreply@finetrades.co.za');
-		// $mail->addCC('copyofemail@finetrades.co.za');
-		//$mail->addBCC('bcc@example.com');
+      $i = 1;
 
-		//Attachments
-		//Add attachments
-		//$mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-		//$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
+	  $a = array();
+      
+      while ($row = mysqli_fetch_assoc($result)) {
 
-		//Content
-		$mail->isHTML(true);                                  //Set email format to HTML
-		$mail->Subject = "$subject";
-		$mail->Body    = "$body";
-		$mail->AltBody = "$body";
+            $value = $row[$row_title];
+            // $id = $row['id'];
+            // $product_price = $row['product_price'];
+            // $product_about = $row['product_about'];
+            // $product_other_details = $row['product_other_details'];
+            // $image = $row['image'];
+            // $image_2 = $row['image_2'];
+            // $image_3 = $row['image_3'];
+            // $product_cash_pay = $row['product_cash_pay'];
+            // $product_list_address = $row['product_list_address'];
+            // $product_address_1 = $row['product_address_1'];
+            // $product_address_2 = $row['product_address_2'];
+            // $product_address_city = $row['product_address_city'];
+            // $product_address_state = $row['product_address_state'];
+            // $product_zip = $row['product_zip'];
+            // $product_individual_or_business_address = $row['product_individual_or_business_address'];
+            // $product_require_deposit = $row['product_require_deposit'];
+            // $product_deposit_amount = $row['product_deposit_amount'];
+            // $product_auto_market = $row['product_auto_market'];
+            // $product_market_budget = $row['product_market_budget'];
+            // $product_show_whatsapp = $row['product_show_whatsapp'];
+            // $product_show_contact = $row['product_show_contact'];
+            // $status = $row['status'];
+            // $seller_name = $row['seller_name'];
+            // $seller_email = $row['seller_email'];
+            // $rank = $row['rank'];
+            
+            // $spec = $id . rand(1, 9);
+            // $spec2 = $id . rand(10, 19);
+            // $spec3 = $id.rand(20,29);
 
-		$mail->send();
-		// alert("");
-	} catch (Exception $e) {
-		// echo"$e";
-		// alert("Oops. Something went wrong. Please contact support");
-		stop();
-	}
-
-	///////////////////////////////////////////////////////////////
+			$i ++;
+            
+			array_push($a,$value);
+            
+        }
+		return $a;
+    }
 }
