@@ -1,5 +1,15 @@
-#  Websites
+# Some live Websites 
 
 My website - Link https://alecshelembe.github.io/site/
+
 Task tracker - https://alecshelembe.github.io/site/S/react-task-tracker-main/
-Version 1 - FineTrade.co.za Please view the .html file 27 Jaunary 2023 https://alecshelembe.github.io/site/S/
+
+https://investec-developer-project-repo.visitmyjoburg.co.za/
+
+https://schoolioo.visitmyjoburg.co.za/login
+
+https://visitmyjoburg.co.za/
+
+https://licensedisk-renewal.co.za/
+
+https://thevapeokes.com
